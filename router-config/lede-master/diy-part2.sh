@@ -53,4 +53,11 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 # git apply ../router-config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
 # ------------------------------- Other ends -------------------------------
+git clone https://github.com/kenzok8/small-package/ package/lean/smallpackage
+git clone https://github.com/kuoruan/openwrt-v2ray package/lean/v2ray-core
+git clone https://github.com/txthinking/brook package/lean/brook
+git clone https://github.com/HyNetwork/hysteria package/lean/hysteria
+git clone https://github.com/xiaorouji/openwrt-passwall package/lean/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2 package/lean/passwall2
+
 
