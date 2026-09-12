@@ -3,7 +3,7 @@
 # https://github.com/ophub/amlogic-s9xxx-openwrt
 # Description: Automatically Build OpenWrt
 # Function: DIY script (After updating feeds — modify the default IP, hostname, theme, add/remove packages, etc.)
-# Source code repository: https://github.com/immortalwrt/immortalwrt / Branch: master
+# Source code repository: https://github.com/openwrt/openwrt / Branch: openwrt-25.12
 #========================================================================================================================
 
 # ------------------------------- Main source configuration -------------------------------
@@ -22,9 +22,9 @@ sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7
 
 # Append source repository information to etc/openwrt_release
 sed -i "s|DISTRIB_REVISION='.*'|DISTRIB_REVISION='R$(date +%Y.%m.%d)'|g" package/base-files/files/etc/openwrt_release
-echo "DISTRIB_SOURCEREPO='github.com/immortalwrt/immortalwrt'" >>package/base-files/files/etc/openwrt_release
-echo "DISTRIB_SOURCECODE='immortalwrt'" >>package/base-files/files/etc/openwrt_release
-echo "DISTRIB_SOURCEBRANCH='master'" >>package/base-files/files/etc/openwrt_release
+echo "DISTRIB_SOURCEREPO='github.com/openwrt/openwrt'" >>package/base-files/files/etc/openwrt_release
+echo "DISTRIB_SOURCECODE='openwrt'" >>package/base-files/files/etc/openwrt_release
+echo "DISTRIB_SOURCEBRANCH='openwrt-25.12'" >>package/base-files/files/etc/openwrt_release
 
 # Configure ccache for build acceleration
 # Remove existing ccache settings

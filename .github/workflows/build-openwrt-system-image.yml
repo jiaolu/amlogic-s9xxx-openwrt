@@ -17,6 +17,7 @@ on:
         options:
           - all
           - openwrt_main
+          - openwrt_openwrt-25.12
           - lede_master
           - immortalwrt_master
       openwrt_board:
@@ -269,7 +270,7 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "6.12.y_6.18.y"
+        default: "6.12.y"
         type: choice
         options:
           - 5.10.y

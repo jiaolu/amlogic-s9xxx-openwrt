@@ -49,6 +49,26 @@ fi
 rm -rf package/luci-app-amlogic
 git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 #
+# Add luci-app-openclash
+rm -rf package/luci-app-openclash openclash_tmp
+git clone -b master --depth=1 https://github.com/vernesong/OpenClash.git openclash_tmp
+mv openclash_tmp/luci-app-openclash package/luci-app-openclash
+rm -rf openclash_tmp
+#
+# Enable OpenClash and its required dependencies
+cat >>.config <<-EOF
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_dnsmasq=n
+CONFIG_PACKAGE_dnsmasq-full=y
+CONFIG_PACKAGE_coreutils-nohup=y
+CONFIG_PACKAGE_bash=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_ip-full=y
+CONFIG_PACKAGE_kmod-nft-tproxy=y
+CONFIG_PACKAGE_kmod-tun=y
+EOF
+#
 # Apply patches
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
